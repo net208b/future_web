@@ -1,0 +1,1002 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    background-color: black;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root {
+    /* violet */
+    --primary-color: 111, 76, 255;
+    
+    /* white */
+    --text-color: 256, 256, 256;
+  }
+  
+  
+/* todo --------- เซต กำหนด ปุ่ม พื้นฐาน ก่อน ------- */
+  .btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    padding: 12px 32px;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+  }
+
+  .btn:hover {
+    transition: all 0.3s ease;
+
+  }
+/* todo  จบ ปุ่มพื้นฐาน */
+
+/* ****************************************************** */
+
+header {
+    height: 100vh;
+    width: 100%;
+    background: url(../img/bg1.png) no-repeat;
+    background-size:cover;
+}
+
+
+.nav {
+    display:flex;
+    justify-content: end;
+    height: 150px;
+    align-items: center;
+    padding:50px;
+}
+ul.menu {
+    display:flex;
+   
+}
+ul.menu li {
+    margin-right: 70px;
+    font-size: 1.5rem;
+}
+ul.menu li a {
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    transition: .4s;
+}
+ul.menu li a:hover {
+    text-shadow: 1px 1px 2px black, 0 0 1em pink, 0 0 0.2em pink;
+}
+
+.nav-logo img {
+
+    transition:.4s;
+
+    animation: updown 5s linear infinite;
+}
+@keyframes updown {
+    0%, 100% 
+        {
+            transform:translateY(0);
+    }
+  
+    50% 
+        {
+            transform:translateY(-30px);      
+        }  
+}
+
+/* ****************************************************** */
+
+.banner {
+    height:60vh;
+
+}
+
+.banner-grid {
+    height:50vh;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: end;
+    align-items: center;
+    text-align: center;
+    padding:20px;
+   
+}
+.banner-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.banner-items h1 {
+    display: flex;
+    color:transparent;
+    font-size:5rem;
+    letter-spacing: 10px;
+    font-weight: bold;
+}
+.banner-items h1 span {
+    
+    font-family: courgette;
+    animation: text 3s linear infinite;
+
+    animation-delay:  calc(0.1s * var(--i));
+}
+@keyframes text 
+{
+    0%
+    {
+        color:#fff;
+        filter:blur(1px) hue-rotate(0deg);
+        text-shadow: 0 0 10px #00b3ff,
+        0 0 20px #00b3ff,
+        0 0 40px #00b3ff,
+        0 0 50px #00b3ff;
+        
+
+    }
+    30%, 70%
+    {
+        color:#fff;
+        filter:blur(1px) hue-rotate(360deg);
+        text-shadow: 0 0 10px #00b3ff,
+        0 0 20px #00b3ff,
+        0 0 40px #00b3ff,
+        0 0 50px #00b3ff;
+        
+
+    }
+    100%
+    {
+        color:transparent;
+        box-shadow:  none;
+        filter:blur(1px) hue-rotate(0deg);
+        
+    }
+}
+
+.banner-items p {
+    color: #fff;
+    margin: 30px 150px;
+    font-size:1.6rem;
+}
+
+
+.btn-animate {
+   
+
+
+
+    background-color: rgba(var(--primary-color), 0.15);
+    border: 1px solid rgba(var(--primary-color), 0.25);
+    color: rgba(var(--text-color), 0.8);
+    display: flex;
+    position: relative;
+    justify-content:center;
+    align-items:center;
+    transition: 1s;
+    overflow: hidden;
+
+
+}
+
+.btn-animate:hover {
+    background-color: var(--clr);
+    border: none;
+    color: rgba(var(--text-color), 0.9);
+    box-shadow: 0 0 10px var(--clr),
+    0 0 30px var(--clr),
+    0 0 60px var(--clr),
+    0 0 100px var(--clr);
+}
+
+.btn-animate::before {
+    content: '';
+    position: absolute;
+    width:30px;
+    height:1000%;
+    background:var(--clr);
+    transition:1s;
+
+    animation:animate 2s linear infinite;
+    animation-delay: calc(0.33s * var(--i));
+    
+}
+/* todo animation: animate คือชื่อ กำหนดให้ @Keyframe ไปทำงานจุดไหน */
+
+@keyframes animate {
+    0%
+    {
+        transform:  rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg) ;
+    }
+}
+
+.btn-animate:hover::before {
+width:120%;
+
+}
+
+.btn-animate::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #0e1538;
+    transition:0.4s;
+    border-radius: 20px;
+}
+/* inset คือ ขนาดของเส้นสีที่วิ่ง */
+
+.btn-animate:hover::after {
+    background: var(--clr);
+}
+
+
+
+ button a {
+    text-decoration: none;
+    color: rgba(var(--text-color), 0.8);
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    opacity: 0.5;
+    text-transform: unupercase;
+    letter-spacing: 1.5px;
+    font-size:1.5rem;
+    
+}
+
+ button a:hover {
+    opacity: 1;
+}
+
+/* ****************************************************** */
+
+.contact {
+    height:150px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content:space-between;
+    align-items: center;
+    
+}
+ul.social {
+    display:flex;
+    font-size:30px;
+    margin-left: 50px;
+    
+}
+ul.social li {
+    list-style: none;
+   
+    margin-top: 20px;
+    transition: 0.5s;
+
+    padding:0.8rem;
+
+   
+}
+ul.social li i {
+    color:white;
+}
+ul.social li:nth-child(1):hover  {
+    background: #0fbcf9;
+    box-shadow:  0 15px 25px #0fbcf999;
+    border-radius: 10px;
+    transform: translateY(-10px);
+}
+
+ul.social li:nth-child(2):hover  {
+    background: #5d62fb;
+    box-shadow:  0 15px 25px #5d62fb99;
+    border-radius: 10px;
+    transform: translateY(-10px);
+}
+ul.social li:nth-child(3):hover  {
+    background: #f53b57;
+    box-shadow:  0 15px 25px #f53b57;
+    border-radius: 10px;
+    transform: translateY(-10px);
+}
+
+ul.social li:nth-child(4):hover  {
+    background: #05c46b;
+    box-shadow:  0 15px 25px #05c46b99;
+    border-radius: 10px;
+    transform: translateY(-10px);
+}
+
+ul.social li:nth-child(5):hover  {
+    background: #f90f0f;
+    box-shadow:  0 15px 25px #f90f0f;
+    border-radius: 10px;
+    transform: translateY(-10px);
+}
+
+.web {
+    text-align: center
+
+}
+.web a {
+    text-decoration: none;
+    color:white;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing:3px;
+    transition:.5s;
+}
+.web a:hover {
+    text-shadow: 1px 1px 2px black, 0 0 1em pink, 0 0 0.2em pink;
+}
+
+.tel {
+    text-align: end;
+    margin-right: 50px;
+
+}
+.tel h2 {
+    color:white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* ***************************************************** */
+
+/* * About Page */
+
+#about {
+    height: 100vh;
+    width: 100%;
+    background: url(../img/bg2.png) no-repeat;
+    background-size:cover;
+}
+.text-glow {
+    text-shadow: 0 0 80px rgb(192 219 255 / 35%), 0 0 32px rgb(65 120 255 / 24%);
+}
+
+
+.text-gradient {
+    background: linear-gradient(to right, #30CFD0, #c43ad6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.text-glow  {
+    font-size:5rem;
+    color:white;
+}
+/* ***************************************************** */
+.container {
+    max-width: 1650px;
+    margin: 0 auto;
+}
+
+#product {
+    height: auto;
+   
+    background: url(../img/bg3.jpg) no-repeat;
+    background-size:cover;
+}
+
+.product-title {
+    text-align: center;
+    
+}
+
+.product-title h1 {
+    font-size:6rem;
+    font-family: courgette;
+    color:white;
+   
+    
+}
+.product-title h1 span {
+    font-family:courgette;
+}
+.product-title p {
+    font-family: bebas;
+    font-size:1.5rem;
+    color:white;
+}
+
+.product-card {
+    display: flex;
+    flex-wrap: wrap;
+    
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+}
+
+.product-card-items {
+    margin: 100px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+
+    width: 500px;
+    height:250px;
+
+    border-radius: 20px;
+   
+    transition: 0.5s;
+   
+}
+.product-card-items .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+
+}
+.product-card-items .circle::before {
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+   background:linear-gradient(45deg,#fe0061,#ffeb3b);
+ 
+    
+    clip-path:  circle(100px at center )  ;
+    transition: 0.5s;
+
+
+
+    
+
+}
+
+.product-card-items:hover .circle:before {
+
+    clip-path:  circle(500px at center);
+    /* background:linear-gradient(45deg,#fe0061,#ffeb3b); */
+
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    background:rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    
+    border-radius: 20px;
+    
+}
+
+
+.product-card-items img {
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition:0.5s;
+    pointer-events: none;
+}
+
+.product-card-items:nth-child(4) img {
+    height: 210px;
+}
+.product-card-items:nth-child(5) img {
+    height: 210px;
+}
+.product-card-items:nth-child(6) img {
+    height: 210px;
+}
+
+.product-card-items:hover img {
+
+    left:80%;
+    height:450px;
+
+}
+.product-card-items:nth-child(4):hover img {
+
+    left:80%;
+    height:290px;
+
+}
+.product-card-items:nth-child(5):hover img {
+
+    left:80%;
+    height:280px;
+
+}
+.product-card-items:nth-child(6):hover img {
+
+    left:80%;
+    height:280px;
+
+}
+
+.product-card-items .product-contents {
+
+    position: relative;
+    width: 50%;
+    left: 20%;
+    transition: 0.5s;
+
+    padding: 30px 20px 20px 10px;
+    opacity:0;
+    visibility:hidden;
+}
+
+.product-card-items:hover .product-contents {
+    left: 5%;
+
+    opacity:1;
+    visibility:visible;
+} 
+
+.product-card-items .product-contents h2 {
+    color: #fff;
+    text-transform:upercase;
+    font-size:1.8rem;
+    
+    
+
+}
+
+.product-card-items .product-contents p {
+    color: white;
+    font-family: poppins;
+    margin: 15px 0;
+    
+}
+.btn-buy {
+    background-color: rgba(var(--primary-color), 0.15);
+    border: 1px solid rgba(var(--primary-color), 0.25);
+    color: rgba(var(--text-color), 0.8);
+    
+    display: flex;
+    position: relative;
+    justify-content:center;
+    align-items:center;
+    transition: 1s;
+    overflow: hidden;
+
+    padding:10px 15px;
+
+
+}
+
+.btn-buy:hover {
+    background-color: var(--clr);
+    border: none;
+    color: rgba(var(--text-color), 0.9);
+    box-shadow: 0 0 10px var(--clr),
+    0 0 30px var(--clr),
+    0 0 60px var(--clr),
+    0 0 100px var(--clr);
+}
+
+.btn-buy::before {
+    content: '';
+    position: absolute;
+    width:30px;
+    height:1000%;
+    background:var(--clr);
+    transition:1s;
+
+    animation:animate3 2s linear infinite;
+    animation-delay: calc(0.33s * var(--i));
+    
+}
+/* todo animation: animate คือชื่อ กำหนดให้ @Keyframe ไปทำงานจุดไหน */
+
+@keyframes animate3 {
+    0%
+    {
+        transform:  rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg) ;
+    }
+}
+
+.btn-buy:hover::before {
+    width:120%;
+
+}
+
+.btn-buy::after {
+    content: '';
+    position: absolute;
+    inset: 1.5px;
+    background: #0e1538;
+    transition:0.5s;
+    border-radius: 20px;
+}
+/* todo inset คือ ขนาดของเส้นสีที่วิ่ง */
+
+.btn-buy:hover::after {
+    background: var(--clr);
+}
+
+
+.product-card-items button a {
+    text-decoration: none;
+    color: rgba(var(--text-color), 0.8);
+    position: relative;
+    z-index: 1;
+    opacity: 0.6;
+    text-transform: unupercase;
+    letter-spacing: 1.5px;
+    font-size:1rem;
+  
+    
+}
+
+.product-card-items button a:hover {
+    opacity: 1;
+   
+}
+
+/* todo ------------ button product -----------------*/
+
+.btn-prod {
+    background-color: rgba(var(--primary-color), 0.15);
+    border: 1px solid rgba(var(--primary-color), 0.25);
+    color: rgba(var(--text-color), 0.8);
+    display: flex;
+    position: relative;
+    justify-content:center;
+    align-items:center;
+    transition: 1s;
+    overflow: hidden;
+
+
+}
+
+.btn-prod:hover {
+    background-color: var(--clr);
+    border: none;
+    color: rgba(var(--text-color), 0.9);
+    box-shadow: 0 0 10px var(--clr),
+    0 0 30px var(--clr),
+    0 0 60px var(--clr),
+    0 0 100px var(--clr);
+}
+
+.btn-prod::before {
+    content: '';
+    position: absolute;
+    width:30px;
+    height:1000%;
+    background:var(--clr);
+    transition:1s;
+
+    animation:animate 2s linear infinite;
+    animation-delay: calc(0.33s * var(--i));
+    
+}
+/* todo animation: animate คือชื่อ กำหนดให้ @Keyframe ไปทำงานจุดไหน */
+
+@keyframes animate {
+    0%
+    {
+        transform:  rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg) ;
+    }
+}
+
+.btn-prod:hover::before {
+width:120%;
+
+}
+
+.btn-prod::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #0e1538;
+    transition:0.4s;
+    border-radius: 20px;
+}
+/* todo inset คือ ขนาดของเส้นสีที่วิ่ง */
+
+.btn-prod:hover::after {
+    background: var(--clr);
+}
+
+
+.btn-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.btn-product button a {
+    text-decoration: none;
+    color: rgba(var(--text-color), 0.8);
+    position: relative;
+    z-index: 2;
+    font-weight: bold;
+    opacity: 0.5;
+    text-transform: unupercase;
+    letter-spacing: 1.5px;
+    font-size:1.5rem;
+    
+}
+
+.btn-product button a:hover {
+    opacity: 1;
+}
+/* ******************************************************** */
+/* *หน้า contact Page */
+#contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    
+}
+.contact-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:30px;
+    width:100%;
+}
+.contact-us p {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 20px 0;
+    padding:0 230px;
+}
+.contact-us li {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.contact-us li i {
+    color: #0fbcf9;
+    margin-right: 10px;
+    
+}
+.contact-us li a {
+    text-decoration: none;
+    color:white;
+    margin-top: 20px;
+    transition: 0.3s;
+    font-family: poppins;
+  
+}
+.contact-us .contact-info-map {
+    width: 100%;
+    text-align: center;
+}
+.contact-info-map iframe {
+   width: 550px;
+   height:250px;
+  
+}
+
+#contact-form {
+    height: auto;
+   
+    background: url(../img/bg3.jpg) no-repeat;
+    background-size:cover;
+}
+
+#contact-infor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    padding: 30px;
+    
+    
+    
+    overflow-x: hidden;
+}
+
+
+
+
+.container-contact
+{
+    position: relative;
+    height:50vh;
+    width: 80%;
+    max-width: 1000px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    border-radius: 10px;
+    z-index: 1;
+    overflow: hidden;
+}
+.container-contact:before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -40%;
+    width: 100%;
+    height: 80vh;
+    background: rgba(255,255,255,0.05);
+    transform: skewX(-18deg);   
+    pointer-events: none;
+}
+.contact-title
+{
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.container-contact .row100 {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
+.container-contact .row100 .col
+{
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    margin: 30px 0 20px;
+    transition: 0.5s;
+}
+.container-contact .row100 .inputBox
+{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    color: #fff;
+}
+
+.container-contact .row100 .inputBox input,
+.container-contact .row100 .inputBox textarea
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 0 10px;
+    z-index: 1;
+    color: #000;
+}
+.container-contact .row100 .inputBox .text
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    font-size: 25px;
+    padding: 0 10px;
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+}
+.container-contact .row100 .inputBox input:focus + .text,
+.container-contact .row100 .inputBox input:valid + .text
+{
+    top: -35px;
+    left: -10px;
+}
+.container-contact .row100 .inputBox .line
+{
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transition: 0.5s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+.container-contact .row100 .inputBox input:focus ~ .line,
+.container-contact .row100 .inputBox input:valid ~ .line
+{
+    height: 100%;
+}
+.container-contact .row100 .inputBox.textarea
+{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding: 10px 0;
+}
+
+
+
+
+.container-contact .row100 .inputBox textarea
+{
+    height: 100%;
+    resize: none;
+}
+.container-contact .row100 .inputBox textarea:focus ~ .line,
+.container-contact .row100 .inputBox textarea:valid ~ .line
+{
+    height: 100%;
+}
+.container-contact .row100 .inputBox textarea:focus + .text,
+.container-contact .row100 .inputBox textarea:valid + .text
+{
+    top: -35px;
+    left: -10px;
+}
+
+input[type="submit"]
+{
+    border: none;
+    padding: 10px 40px;
+    cursor: pointer;
+    outline: none;
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 2px;
+}
